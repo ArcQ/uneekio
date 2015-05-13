@@ -1,0 +1,60 @@
+/* NAV */
+
+#navMarginTop{
+  margin-top:56px;
+}
+
+.navbar {
+  font-size: 15px;
+  font-weight: 300;
+  min-height: 45px;
+}
+
+.navbar-brand {
+  float: left;
+  padding: 15px 30px;
+  font-size: 19px;
+  line-height: 25px;
+  height: 55px;
+}
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  color: #FBA7AB;
+  background-color: #333333;
+}
+
+.navbar-default .navbar-nav > li > a:hover{
+  color: #FBA7AB;
+  background-color: #333333;
+}
+
+.navbar-nav > li > a {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  line-height: 25px;
+}
+
+.nav > li > a {
+  position: relative;
+  display: block;
+  padding: 20px 40px;
+}
+
+@media screen and (min-width: 768px){
+  .navbar-nav > li > a {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }  
+}
+
+/*BANNER*/
+.banner{
+  width:100%;
+}
+
+.banner img{
+  width:100%;
+}
+
+
+

@@ -8,7 +8,7 @@
  *
  * Main module of the application.
  */
-angular
+var app = angular
   .module('uneekioApp', [
     'ngAnimate',
     'ngCookies',
@@ -16,8 +16,9 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch'
-  ])
-  .config(['$routeProvider', '$locationProvider', '$httpProvider', function($routeProvider, $locationProvider, $httpProvider) {
+  ]);
+
+  app.config(['$routeProvider', '$locationProvider', '$httpProvider', function($routeProvider, $locationProvider, $httpProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',

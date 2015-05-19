@@ -15,7 +15,7 @@
 
     <!-- Add your site or application content here -->
     <div class="header">
-      <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div id = "topNav" class="navbar navbar-default" role="navigation">
           <div class="navbar-header">
 
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
@@ -25,16 +25,14 @@
               <span class="icon-bar"></span>
             </button>
 
-            <a class="navbar-brand" href="#/" style = "color:#A7383E">uneek</a>
+            <a class="navbar-brand" href="#/"><img class= "logo" src = "images/uneek_logo.png"></a>
           </div>
 
           <div class="collapse navbar-collapse" id="js-navbar-collapse">
 
             <ul class="nav navbar-nav">
-              <li class="active"><a ng-href="#/about">Outside The Box</a></li>
-              <li><a ng-href="#/about">Inspiration</a></li>
-              <li><a ng-href="#/about">Self-Improvement</a></li>
-              <li><a ng-href="#/">Code Journal</a></li>
+              <li class="active"><a ng-href="#">Blog</a></li>
+              <li><a ng-href="#">Code Journal</a></li>
             </ul>
           </div>
       </div>
@@ -46,7 +44,6 @@
 
     <div class="footer">
       <div class="container">
-        <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
       </div>
     </div>
 
@@ -60,6 +57,8 @@
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
     <!-- endbower -->
+
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.10.3/TweenMax.min.js"></script>
 
     <script src="scripts/app.js"></script>
     <script src="scripts/controllers/main.js"></script>

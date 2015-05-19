@@ -1,31 +1,84 @@
+/*GLOBAL*/
+.centerOuterX{
+  position: absolute; 
+  left: 50%;
+  /*absolute positioning center cheat*/
+}
+.centerInnerX{
+  position: relative; 
+  left: -50%;
+  /*absolute positioning center cheat*/
+}
+
+.centerOuterY{
+  position: absolute; 
+  top: 50%;
+}
+.centerInnerY{
+  position: relative; 
+  top: -50%;
+  /*absolute positioning center cheat*/
+}
 /* NAV */
 
 #navMarginTop{
-  margin-top:56px;
+  margin-top:0px;
 }
 
 .navbar {
   font-size: 15px;
   font-weight: 300;
   min-height: 45px;
+  background: none;
+}
+
+.navbar-nav{
+  float:none;
 }
 
 .navbar-brand {
   float: left;
-  padding: 15px 30px;
+  padding: 12px 20px;
   font-size: 19px;
   line-height: 25px;
   height: 55px;
 }
+.navbar-brand img {
+  height:55px;
+  width:auto;
+}
+
+/*TOP NAV*/
+#topNav{
+  position:absolute;
+  width:100%;
+  z-index:1000;
+}
+#topNav ul{
+  margin-top:19px;
+}
+
+#topNav li a {
+  position: relative;
+  display: block;
+  padding: 12px 10px;
+}
+
+/*TOP NAV END*/
 
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
-  color: #FBA7AB;
-  background-color: #333333;
+  color: #A7383E;
+  background: none;
 }
 
 .navbar-default .navbar-nav > li > a:hover{
-  color: #FBA7AB;
-  background-color: #333333;
+  color: #A7383E;
+  background: none;
+}
+
+.navbar-default .navbar-nav > li > a:focus{
+  color: #A7383E;
+  background: none;
 }
 
 .navbar-nav > li > a {
@@ -47,14 +100,213 @@
   }  
 }
 
+/* NAV END*/
+
 /*BANNER*/
+
 .banner{
   width:100%;
+  position:relative;
+  height:600px;
 }
 
-.banner img{
+.banner .slide{
   width:100%;
+  height:600px;
+  background-size: 1920px 600px;
+  position:absolute;
 }
+
+.banner .navOuter{
+  bottom:0;
+  z-index:100;
+}
+
+.banner .nav{
+  bottom:0;
+  z-index:100;
+}
+.banner .nav .dots{
+  padding:0;
+}
+.banner .nav .dot{
+  display:inline-block; 
+}
+
+.banner .nav .dot a{
+  width:30px;
+  height:30px;
+  margin:0 5px;
+  background-image:url('../images/carousel/navCircle.png');
+  background-size:30px 30px;
+  display:inline-block;
+  transition: all 0.2s linear;
+}
+
+.banner .nav .dot .active{
+  background-image:url('../images/carousel/activeNavCircle.png');
+}
+
+.banner .nav .dot a:hover{
+  background-image:url('../images/carousel/activeNavCircle.png');
+  transition: all 0.3s linear;
+}
+
+.bannerButtons{
+
+}
+.prevButton{
+
+}
+.nextButton{
+
+}
+
+@media only screen and (max-width: 1440px){
+  
+  .banner{
+    width:100%;
+    position:relative;
+    height:450px;
+  }
+
+  .banner .slide{
+    width:100%;
+    height:450px;
+    background-size: 1440px 450px;
+    position:absolute;
+  }
+
+}
+
+.banner .arrow{
+}
+
+.banner #prevArrow{
+  top:45%;
+  position:absolute;
+  display:block;
+  background-image:url('../images/carousel/prev.png');
+  background-size:70px 70px;
+  width:70px;
+  height:70px;
+  left:0;
+
+}
+
+.banner #nextArrow{
+  top:45%;
+  right:0;
+  position: absolute;
+  display:block;
+  background-image:url('../images/carousel/next.png');
+  background-size:70px 70px;
+  width:70px;
+  height:70px;
+}
+
+.banner #prevArrow:hover{
+
+  background-image:url('../images/carousel/activePrev.png');
+  background-size:70px 70px;
+  width:70px;
+  height:70px;
+  left:0;
+
+}
+
+.banner #nextArrow:hover{
+
+  background-image:url('../images/carousel/activeNext.png');
+  background-size:70px 70px;
+  width:70px;
+  height:70px;
+
+}
+
+.banner .slide .textOuter{
+  width:100%
+}
+
+.banner .slide .textOuter .textInner{
+  width:100%; 
+  text-align:center;
+}
+
+.banner .slide .textOuter .textInner h1{
+  z-index:10; 
+  margin:0; 
+  margin-bottom:10px;
+  color:white; 
+  font-size:4vw;
+}
+
+.banner .slide .textOuter .textInner h3{
+  z-index:10; 
+  margin:0; 
+  margin-bottom:10px;
+  color:#EBEBEB; 
+  font-size:1.5vw;
+}
+
+/*BANNER END*/
+
+/*BLOGNAV*/
+#blogNav{
+  border-bottom:1px solid #F0F0F0;
+}
+
+#blogNav ul{
+  color: #999;
+  display:block; 
+  width:700px; 
+  margin:auto; 
+}
+
+#blogNav{
+  position:relative; 
+  width:100%; 
+  display:block;
+  float:none;
+
+}
+#blogNav a {
+  color:#333;
+
+}
+
+#blogNav ul .active a{
+  color:#A7383E;
+
+}
+
+#blogNav a:hover{
+  color:#A7383E;
+
+}
+
+#blogNav a:focus{
+  color:#333;
+  background:none;
+}
+/*BLOGNAV END*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

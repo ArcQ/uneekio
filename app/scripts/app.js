@@ -24,9 +24,9 @@ var app = angular
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl'
+      .when('/blogPost', {
+        templateUrl: 'views/blogPost.html',
+        controller: 'BlogPostCtrl'
       })
       .otherwise({
         redirectTo: '/'

@@ -1,0 +1,32 @@
+'use strict';
+
+/**
+ * @ngdoc function
+ * @name uneekioApp.controller:MainCtrl
+ * @description
+ * # MainCtrl
+ * Controller of the uneekioApp
+ */
+app.controller('BlogPostCtrl', function ($scope,$timeout,$location,$http) {
+    //initiate post
+    $scope.post = {
+      image: 'images/blogPosts/tempFull/5FVJ2PSHJS.jpg',title:'3 Compelling Reasons to Start Questioning Convention',description:'A memento from a recent grad'
+    }; 
+
+    $http.get('http://localhost:8000/uneekio/blogPost/')
+    .success(function(data,status,headers,config){
+      console.log(data);
+    })
+    .error(function(data,status,headers,config){
+      console.log(data);
+    });
+
+    // $http.post('localhost:8000/uneekio/blogPost/',{})
+    // .success(function(data,status,headers,config){
+    //   console.log(data);
+    // })
+    // .error(function(data,status,headers,config){
+    //   console.log(data);
+    // });
+
+  });

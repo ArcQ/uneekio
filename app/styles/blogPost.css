@@ -94,12 +94,43 @@
   margin-top: 40px;
 }
 
+.blogContent h3 .listNumber{
+  border:1px solid #A7383E; 
+  color: #A7383E; 
+  padding:0px 10px; 
+  border-radius:20px;
+}
+
 @media only screen and (max-width: 790px){
   .blogContent{
-  width:100%;
-  margin:10px 20px;
-  float:none;
-
+    width:100%;
+    margin:10px 20px;
+    float:none;
+  }
 }
+
+.navbar-default .navbar-nav > li > a {
+  color: #777;
+}
+
+.blogContent .emphasis{
+  padding-left:50px;
+  font-weight:bold;
+  color:#A7383E;
+}
+
+.blogContent .citeMark{
+  font-size:11px;
+  border:1px solid black;
+  color:black;
+  margin-bottom:10px;
+  vertical-align:text-bottom;
+  border-radius:8px;
+  padding:0 5px;
+}
+
+.blogContent .citation{
+  font-size:13px;
+  font-style:italic;
 }
 

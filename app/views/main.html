@@ -6,13 +6,13 @@
 
       <div class = " centerOuterY textOuter">
         <div class = " centerInnerY textInner">
-          <h1>
-            {{slide.title}}
+          <h1 ng-href="{{slide.url}}"><a>
+            {{slide.title}}</a>
           </h1>
           <h3>
-            {{slide.description}}
+            {{slide.featuredDescription}}
           </h3>
-          <a class = "btn btn-primary">Read More</a>
+          <a class = "btn btn-primary" ng-href="{{slide.url}}">Read More</a>
         </div>
       </div>
 
@@ -37,54 +37,48 @@
   </div>
 </div>
 
-<div id = "blogNav" class="navbar navbar-default" role="navigation">
-
-      <div class="collapse navbar-collapse" id="js-navbar-collapse" >
-        <ul class="nav navbar-nav">
-          <li>
-            <a><img style = "height:40px;"src = "images/uneek_logo2.png"></a>
-          </li>
-          <li class="active"><a ng-href="#/about">Outside the Box</a></li>
-          <li><a ng-href="#/">Entrepreneur</a></li>
-          <li><a ng-href="#/">Self-Improvement</a></li>
-        </ul>
-      </div>
+<div sticky-nav id = "blogNav" class="navbar navbar-default">
+  <div class="collapse navbar-collapse" id="js-navbar-collapse" >
+    <ul class="nav navbar-nav">
+      <li>
+        <a><img style = "height:40px;"src = "images/uneek_logo2.png"></a>
+      </li>
+      <li class="active"><a ng-href="#/about">Outside the Box</a></li>
+      <li><a ng-href="#/">Entrepreneur</a></li>
+      <li><a ng-href="#/">Self-Improvement</a></li>
+    </ul>
   </div>
-  <div class = "col-md-9">
+</div>
 
-    <div ng-repeat = "post in posts" style = "border-bottom:1px solid #E0E0E0; padding: 15px 0px;">
-      <img src= "images/blogPosts/tempFull/5FVJ2PSHJS.jpg" style = "width:30%; margin:0 15px; display:inline-block;vertical-align:top;">
-      <div style = "width:60%; display:inline-block;">
-        <h3>Another Solid Title</h3>
-        <span class="label label-danger">Outside the Box</span>
-        <div style = "
-   overflow: hidden;
-   margin: 10px 0 5px 0;
-   text-overflow: ellipsis;
-   display: -webkit-box;
-   line-height: 16px;     /* fallback */
-   max-height: 64px;      /* fallback */
-   -webkit-line-clamp: 4; /* number of lines to show */
-   -webkit-box-orient: vertical;
-   "> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
-        </div><a>Read More</a>
-      </div>
+<div class = "placeHolder" ng-show="isBlogNavFixed" style = "position:width:100%;height:70px;margin-bottom:21px;">
+</div>
 
+<div class = "col-md-9">
+  <div class = "listedPost" ng-repeat = "post in posts | filter:{tags:tagFilter} ">
+    <img ng-src= "{{post.image}}" style = "">
+    <div class = "textSection">
+      <h3><a href = "{{post.url}}">{{post.title}}</a></h3>
+      <span class="label label-danger" ng-repeat = "tag in post.tags">{{tag}}</span>
+      <div class = "short">
+        {{post.description}}
+      </div><a ng-href = "{{post.url}}">Read More</a>
     </div>
 
   </div>
-  <div class = "col-md-3">
-    <div class="list-group">
-      <div href="#" class="list-group-item">
-        <h4 class="list-group-item-heading">Trending Topics</h4>
-      </div>
-      <a href="#" class="list-group-item">
-        <h4 class="list-group-item-heading">List group item heading</h4>
-        <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-      </a>
-      <a href="#" class="list-group-item">
-        <h4 class="list-group-item-heading">List group item heading</h4>
-        <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-      </a>
+</div>
+
+<div class = "col-md-3" style = "display:none">
+  <div class="list-group">
+    <div href="#" class="list-group-item">
+      <h4 class="list-group-item-heading">Trending Topics</h4>
     </div>
+    <a href="#" class="list-group-item">
+      <h4 class="list-group-item-heading">List group item heading</h4>
+      <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+    </a>
+    <a href="#" class="list-group-item">
+      <h4 class="list-group-item-heading">List group item heading</h4>
+      <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+    </a>
   </div>
+</div>

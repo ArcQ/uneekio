@@ -7,18 +7,52 @@
  * # MainCtrl
  * Controller of the uneekioApp
  */
-app.controller('MainCtrl', function ($scope,$timeout) {
-  	// Slider Functionality
-  	// Create a slider dictionary
-    $scope.slides = [
-    	{image: 'images/blogPosts/temp/5FVJ2PSHJS.jpg',title:'10 Reasons Why This Title Works',description:''},
-    	{image: 'images/blogPosts/temp/EKVFZ0A22C.jpg',title:'Fake Title of a Lifetime',description:'Journey and discover the great points of life and the fakeness of this title.'}
-    ]; 
+app.controller('MainCtrl', function ($scope,$timeout,$http,appConfig) {
 
-    $scope.posts = [
-    	{image: 'images/blogPosts/temp/5FVJ2PSHJS.jpg',title:'10 Reasons Why This Title Works',description:''},
-    	{image: 'images/blogPosts/temp/EKVFZ0A22C.jpg',title:'Fake Title of a Lifetime',description:'Journey and discover the great points of life and the fakeness of this title.'}
-    ]; 
+    $scope.basePath = appConfig.data.default_path;
+    $scope.apiPath = appConfig.data.default_api;
+
+    console.log($scope.apiPath)
+    initController(); 
+    //Init Controller
+    function initController(){
+
+       $http.get($scope.apiPath + 'uneekio/blogPost/')
+        .success(function(data,status,headers,config){
+          $scope.blogPosts = data;
+          console.log($scope.blogPosts);
+          // Slider Functionality
+          // Create a slider dictionary
+          $scope.slides = [];
+          for(var i in $scope.blogPosts){
+            $scope.slides[i] ={};
+            $scope.slides[i].image = 'images/blogPosts/'+$scope.blogPosts[i].blogId+'/featured_img.jpg';
+            $scope.slides[i].title = $scope.blogPosts[i].title;
+            $scope.slides[i].description = $scope.blogPosts[i].description;
+            $scope.slides[i].url = $scope.basePath + 'blogPost?id='+$scope.blogPosts[i]._id;
+
+          }
+          $scope.posts = [];
+          for(var i in $scope.blogPosts){
+            $scope.posts[i] ={};
+            $scope.posts[i].image = 'images/blogPosts/'+$scope.blogPosts[i].blogId+'/small_img.jpg';
+            $scope.posts[i].title = $scope.blogPosts[i].title;
+            $scope.posts[i].description = $scope.blogPosts[i].description;
+            $scope.posts[i].url = $scope.basePath + 'blogPost?id='+$scope.blogPosts[i]._id;
+
+            $scope.posts[i].tags = [];
+
+            for(var j in $scope.blogPosts[i].tag){
+              $scope.posts[i].tags[j] = $scope.blogPosts[i].tag[j];
+            }
+
+          }
+        })
+        .error(function(data,status,headers,config){
+          console.log(data);
+        });
+
+    }
 
     $scope.setCurrentSlideIndex = function(index){
     	$scope.currentIndex = index;
@@ -48,10 +82,54 @@ app.controller('MainCtrl', function ($scope,$timeout) {
     var bannerTimeout = $timeout($scope.nextSlide, timeoutDuration);
 
     // Posts Functionality
-    $scope.posts = [{},{}]
+    $scope.tagFilter = "Outside The Box";
 
-  })
-  .animation('.slide', function($window){
+    //stickynav
+    $scope.isBlogNavFixed = false;
+
+
+  }).directive("stickyNav", function stickyNav($window){  
+  function stickyNavLink(scope, element){
+    var w = angular.element($window),
+        de = document.documentElement,
+        box = element[0].getBoundingClientRect(),
+        offset = box.top + window.pageYOffset - de.clientTop,
+        left = box.left + window.pageXOffset - de.clientLeft,
+        top = 0;
+
+    function toggleStickyNav(){
+      if(!element.hasClass('controls-fixed') && $window.pageYOffset > top + offset){
+        element.addClass('controls-fixed');
+        scope.$apply(function(){
+          scope.$parent.isBlogNavFixed = true;
+        });
+
+      } 
+      else if(element.hasClass('controls-fixed') && $window.pageYOffset <= top + offset){
+        element.removeClass('controls-fixed');
+        scope.$apply(function(){
+          scope.$parent.isBlogNavFixed = false;
+        });
+
+      }
+    }
+
+    w.bind('resize', function stickyNavResize(){
+      element.removeClass('controls-fixed');
+      box = element[0].getBoundingClientRect(),
+      offset = box.top + window.pageYOffset - de.clientTop,
+      left = box.left + window.pageXOffset - de.clientLeft,
+      toggleStickyNav();
+    });
+    w.bind('scroll', toggleStickyNav);
+  }
+
+  return {
+    scope: {},
+    restrict: 'A',
+    link: stickyNavLink
+  };
+}).animation('.slide', function($window){
   	return {
   		addClass: function(element, className, done){
 	  			if (className == 'ng-hide') {

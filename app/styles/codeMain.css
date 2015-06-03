@@ -5,21 +5,30 @@
 	position:absolute;
   width:100%;
   z-index:1000;
+  border-bottom:1px solid #4677B2;
 }
 .mainNav ul{
-  margin-top:19px;
-
+  margin-top:15px;
+  margin-bottom:15px;
 }
+
+.mainNav
 
 .mainNav li a {
   position: relative;
   display: block;
   padding: 12px 10px;
-
 }
 
 .navbar-default .navbar-nav > li > a {
   color: #333;
+  cursor:pointer;
+}
+.navbar-default .navbar-nav > li > a:hover {
+  color:#4677B2;
+}
+.navbar-default .navbar-nav > .active > a {
+  color:#4677B2;
 }
 .content{
   padding-top:80px;

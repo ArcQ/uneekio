@@ -1,4 +1,4 @@
-app.config(['$routeProvider', '$locationProvider', '$httpProvider', function($routeProvider, $locationProvider, $httpProvider, appConfig) {
+app.config(['$routeProvider', '$locationProvider', '$httpProvider', function($routeProvider, $locationProvider, $httpProvider, $location, appConfig) {
 $routeProvider
   .when('/', {
     templateUrl: 'views/main.html',
@@ -9,12 +9,10 @@ $routeProvider
     controller: 'BlogPostCtrl'
   })
   .when('/codeJournal', {
-    templateUrl: 'views/codeMain.html',
-    controller: 'codeMainCtrl'
-  })
-  .when('/codeJournal/post', {
-    templateUrl: 'views/codePost.html',
-    controller: 'codePostCtrl'
+    controller : function(appConfig){
+        window.location.href = appConfig.data.default_path +'codeJournal/';
+    }, 
+    template : "<div></div>"
   })
   .when('/about', {
     templateUrl: 'views/essential/about.html'

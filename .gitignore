@@ -4,4 +4,4 @@ dist
 .sass-cache
 bower_components
 app/scripts/services/appConfig.js
-
+app/setup.js

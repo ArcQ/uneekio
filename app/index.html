@@ -10,6 +10,13 @@
     <link rel="stylesheet" href="styles/bootstrap.css">
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
+	<script type="text/javascript">
+        var globalLanguage = 'en';
+
+        // GA tracking variable
+        var _gaq = [['_setAccount', 'UA-63553984-1'], ['_trackPageview']];
+	</script>
+
   </head>
   <body ng-app="uneekioApp">
     <div ng-controller="AppCtrl">
@@ -92,6 +99,15 @@ m;">
       <script src="scripts/controllers/app.js"></script>
       <script src="scripts/controllers/main.js"></script>
       <script src="scripts/controllers/blogPost.js"></script>
-  </div>
+	<script type="text/javascript">
+    (function(d, t) {
+        var g = d.createElement(t), s = d.getElementsByTagName(t)[0];
+        g.async = 1;
+        g.src = '//www.google-analytics.com/ga.js';
+        g.type = 'text/javascript';
+        s.parentNode.insertBefore(g, s);
+    }(document, 'script'));
+	</script>  
+</div>
 </body>
 </html>

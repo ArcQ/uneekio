@@ -1,1 +1,1 @@
-var globalBasePath = '/uneekio/';
+var globalBasePath = '/';

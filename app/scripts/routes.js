@@ -16,6 +16,18 @@ $routeProvider
     templateUrl: 'views/codePost.html',
     controller: 'codePostCtrl'
   })
+  .when('/about', {
+    templateUrl: 'views/essential/about.html'
+  })
+  .when('/contact', {
+    templateUrl: 'views/essential/contact.html'
+  })
+  .when('/privacyPolicy', {
+    templateUrl: 'views/essential/privacyPolicy.html'
+  })
+  .when('/termsAndConditions', {
+    templateUrl: 'views/essential/termsConditions.html'
+  })
   .otherwise({
     redirectTo: '/'
   });

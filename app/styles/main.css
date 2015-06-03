@@ -350,6 +350,44 @@
   cursor: pointer;
 }
 
+/*FOOTER*/
+.footer{
+  display:inline-block;
+  width:100%; 
+  padding:10px; 
+  margin-top:20px; 
+  border-top:1px solid #E6E6E6; 
+  width:100%;
+}
+
+.footer .logo{
+  margin-top:-10px;
+  margin-bottom:5px;
+  width:120px;
+}
+
+.footer ul{
+  list-style-type: none;
+  margin: 20px 0;
+}
+.footer h3{
+  margin-top:20px;
+  margin-bottom:10px;
+}
+
+.footer li{
+  margin-top:10px;
+}
+
+.footer a{
+  color:#333;
+  padding:10px;
+}
+
+.footer .botLinks{
+  font-size:11px;
+}
+/*END FOOTER*/
 
 
 

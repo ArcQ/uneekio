@@ -6,7 +6,6 @@
     <script>document.write("<base href="+globalBasePath+">");</script>
 
     <meta charset="utf-8">
-    <title>uneek home page</title>
 
     <link rel="stylesheet" href="styles/bootstrap.css">
     <link rel="stylesheet" href="styles/main.css">
@@ -37,7 +36,7 @@
 
               <ul class="nav navbar-nav">
                 <li class="active"><a ng-href="{{defaultPath}}">Blog</a></li>
-                <li><a ng-href="#">Code Journal</a></li>
+                <li><a ng-href="{{defaultPath}}codeJournal">Code Journal</a></li>
               </ul>
             </div>
         </div>
@@ -48,8 +47,31 @@
       </div>
 
       <div class="footer">
-        <div class="container">
+        <div class = "container">
+          <div class = "col-md-4">
+            <ul>
+              <img class= "logo" src = "images/uneek_logo.png">
+              <li><a ng-href = "{{defaultPath}}">Blog</a></li>
+              <li><a ng-href = "{{defaultPath}}codeJournal/">CodeJournal</a></li>
+            </ul>
+          </div>
+          <div class = "col-md-4" style = "vertical-align:text-bottom;
+m;">
+            <ul>
+              <li style = "margin-bottom:20px"><h3>About</h3></li>
+              <li><a>uneek</a></li>
+              <li><a>Contact Us</a></li>
+            </ul>
+          </div>
+          <div class = "col-md-4" style = "margin-bottom:20px">
+            <ul>
+              <li><h3>Subscribe To uneek.io</h3></li>
+              <p>Stay Up To Date With Our Latest Articles</p>
+              <input style = "padding:7px 5px 9px 5px; width:200px"type = "text" placeholder = "Email Address"></input><input class = "btn" type = "submit"></input>
+            </ul>
+          </div>
         </div>
+      <center class = "botLinks"><a href = "{{defaultPath}}termsAndConditions">Terms of Service</a>  <a href = "{{defaultPath}}privacyPolicy">Privacy Policy</a></center>
       </div>
 
       <!-- build:js(.) scripts/vendor.js -->

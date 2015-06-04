@@ -384,6 +384,13 @@
   padding:10px;
 }
 
+.footer li a:hover{
+  color:#A7383E;
+  padding:10px;
+  text-decoration:none;
+}
+
+
 .footer .botLinks{
   font-size:11px;
 }

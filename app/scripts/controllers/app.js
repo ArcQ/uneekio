@@ -19,6 +19,7 @@ app.controller('AppCtrl', function ($scope,$timeout,$http,appConfig) {
             output+=key+"="+value+"&";
         })
         output=output.substr(0,output.length-1);
+        console.log(output);
         $window._gaq.push(['_trackPageView', output]);
     });
 });

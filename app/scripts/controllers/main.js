@@ -27,18 +27,18 @@ app.controller('MainCtrl', function ($scope,$timeout,$http,appConfig) {
           for(var i in $scope.blogPosts){
             $scope.slides[i] ={};
             $scope.slides[i].image = 'images/blogPosts/'+$scope.blogPosts[i].blogId+'/featured_img.jpg';
-            $scope.slides[i].title = $scope.blogPosts[i].title;
+            $scope.slides[i].title = $scope.blogPosts[i].title.replace(/_/g,' ');
             $scope.slides[i].description = $scope.blogPosts[i].description;
-            $scope.slides[i].url = $scope.basePath + 'blogPost?id='+$scope.blogPosts[i]._id;
+            $scope.slides[i].url = $scope.basePath + 'blogPost?title='+$scope.blogPosts[i].title;
 
           }
           $scope.posts = [];
           for(var i in $scope.blogPosts){
             $scope.posts[i] ={};
             $scope.posts[i].image = 'images/blogPosts/'+$scope.blogPosts[i].blogId+'/small_img.jpg';
-            $scope.posts[i].title = $scope.blogPosts[i].title;
+            $scope.posts[i].title = $scope.blogPosts[i].title.replace(/_/g,' ');
             $scope.posts[i].description = $scope.blogPosts[i].description;
-            $scope.posts[i].url = $scope.basePath + 'blogPost?id='+$scope.blogPosts[i]._id;
+            $scope.posts[i].url = $scope.basePath + 'blogPost?title='+$scope.blogPosts[i].title;
 
             $scope.posts[i].tags = [];
 

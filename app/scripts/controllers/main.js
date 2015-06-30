@@ -12,6 +12,8 @@ app.controller('MainCtrl', function ($scope,$timeout,$http,appConfig) {
     $scope.basePath = appConfig.data.default_path;
     $scope.apiPath = appConfig.data.default_api;
 
+
+
     console.log($scope.apiPath)
     initController(); 
     //Init Controller
@@ -27,9 +29,9 @@ app.controller('MainCtrl', function ($scope,$timeout,$http,appConfig) {
           for(var i in $scope.blogPosts){
             $scope.slides[i] ={};
             $scope.slides[i].image = 'images/blogPosts/'+$scope.blogPosts[i].blogId+'/featured_img.jpg';
-            $scope.slides[i].title = $scope.blogPosts[i].title.replace(/_/g,' ');
-            $scope.slides[i].description = $scope.blogPosts[i].description;
             $scope.slides[i].url = $scope.basePath + 'blogPost?title='+$scope.blogPosts[i].title;
+            $scope.slides[i].title = $scope.blogPosts[i].title.replace(/_/g,' ');
+            $scope.slides[i].featuredDescription = $scope.blogPosts[i].featuredDescription;
 
           }
           $scope.posts = [];
@@ -37,9 +39,8 @@ app.controller('MainCtrl', function ($scope,$timeout,$http,appConfig) {
             $scope.posts[i] ={};
             $scope.posts[i].image = 'images/blogPosts/'+$scope.blogPosts[i].blogId+'/small_img.jpg';
             $scope.posts[i].title = $scope.blogPosts[i].title.replace(/_/g,' ');
-            $scope.posts[i].description = $scope.blogPosts[i].description;
             $scope.posts[i].url = $scope.basePath + 'blogPost?title='+$scope.blogPosts[i].title;
-
+            $scope.posts[i].descriptionUrl = 'blogPosts/'+$scope.blogPosts[i].blogId+'/description.html'; 
             $scope.posts[i].tags = [];
 
             for(var j in $scope.blogPosts[i].tag){

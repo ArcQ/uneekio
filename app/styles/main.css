@@ -19,6 +19,10 @@
   top: -50%;
   /*absolute positioning center cheat*/
 }
+
+.red{
+  color:#A7383E;
+}
 /* NAV */
 
 #navMarginTop{
@@ -394,13 +398,44 @@
 .footer .botLinks{
   font-size:11px;
 }
+
+#emailTextInput{
+  padding:7px 5px 9px 5px; 
+  width:70%;
+}
+
+#emailSubmit{
+  width:30%;
+}
+
 /*END FOOTER*/
 
+/*TAGS*/
+.label-danger{
+  background:#A7383E;
+}
 
-
-
-
-
+/*Floating Status Update*/
+.ng-hide-add, .ng-hide-remove {
+    display: block !important;
+}
+#floatingStatusUpdateContainer{
+  position:fixed;
+}
+#floatingStatusUpdate{
+  z-index:1000;
+  background-color:rgba(0,0,0,0.8);
+  padding:10px;
+  font-size:50px;
+  color:white;
+  
+}
+/*.fadeContainer > .ng-hide{
+  transition: 1s linear all;
+  display: block!important;
+  opacity: 0;
+}*/
+/*Floating Status Update End*/
 
 
 

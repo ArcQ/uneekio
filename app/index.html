@@ -9,6 +9,7 @@
 
     <link rel="stylesheet" href="styles/bootstrap.css">
     <link rel="stylesheet" href="styles/main.css">
+    <link rel = "stylesheet" href = "styles/loadAnimation.css">
     <!-- endbuild -->
 	<script type="text/javascript">
         var globalLanguage = 'en';
@@ -74,11 +75,32 @@ m;">
             <ul>
               <li><h3>Subscribe To uneek.io</h3></li>
               <p>Stay Up To Date With Our Latest Articles</p>
-              <input style = "padding:7px 5px 9px 5px; width:200px"type = "text" placeholder = "Email Address"></input><input class = "btn" type = "submit"></input>
+              <form ng-submit="saveEmail()">
+                <input id = "emailTextInput" type = "email" placeholder = "Email Address" ng-model="subEmail">
+                </input>
+                <input id = "emailSubmit" class = "btn" type="submit" id="submit" value="Submit">
+                </input>
+              </form>
             </ul>
           </div>
         </div>
       <center class = "botLinks"><a href = "{{defaultPath}}termsAndConditions">Terms of Service</a>  <a href = "{{defaultPath}}privacyPolicy">Privacy Policy</a></center>
+      </div>
+
+      <!-- FLOATING STATUS UPDATES -->
+      
+
+      <div class="centerOuterX centerOuterY fadeContainer" 
+      id = "floatingStatusUpdateContainer">
+        <div class = "centerInnerX centerInnerY" id = "floatingStatusUpdate" ng-hide = "!loadStatus.isShow" >
+          <div id = "loadStatusText" ng-if = "!loadStatus.isLoading">{{loadStatus.text}}</div>
+          <div id="movingBallG" ng-show = "loadStatus.isLoading">
+            <div class="movingBallLineG">
+            </div>
+            <div id="movingBallG_1" class="movingBallG">
+            </div>
+          </div>
+        </div>
       </div>
 
       <!-- build:js(.) scripts/vendor.js -->
@@ -95,6 +117,7 @@ m;">
       <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.10.3/TweenMax.min.js"></script>
       <script src="scripts/app.js"></script>
       <script src="scripts/services/appConfig.js"></script>
+      <script src="scripts/services/loadStatus.js"></script>
       <script src="scripts/routes.js"></script>
       <script src="scripts/controllers/app.js"></script>
       <script src="scripts/controllers/main.js"></script>

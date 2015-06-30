@@ -8,6 +8,7 @@
 	  	<h1 class = "blogTitle">
 			 {{post.title}}
 			</h1>
+			<h4 class = "author">Written By: <span class = "red">{{post.author}}</span></h4>
 			<div class = "socialMedia" style = "display:none;">
 				<a class = "btn btn-primary">Share This On Facebook</a>
 				<a class = "btn btn-primary">Share This On Twitter</a>
@@ -27,7 +28,23 @@
 				</div>
 			</div>
 
-	  <div ng-include = "post.contentUrl" class = "blogContent" src >
+	  <div ng-include = "post.contentUrl" class = "blogContent">
+	  </div>
+	  <div class = "comments">
+
+	  	<form ng-submit="saveNewComment()">
+	  		<h3>What do you think of this article?</h3>
+	  		<input class = "nameInput" type = "text" placeholder="Name" ng-model = "newComment.author">
+        
+        <textarea rows="4" type = "textarea" placeholder="Your Thoughts" ng-model = "newComment.content"></textarea>
+        
+        <input class = "btn submitButton" type="submit" id="submit" value="Post Comment" >
+      </form>
+
+      <h3 ng-show="post.comments.length == 0" id = "noCommentsMsg">No comments for this post yet. Be the first to comment!</h3>
+      <collection collection='post.comments' on-submit = 'saveReply(comment)' on-reply = 'toggleCommentForm(comment)'></collection>
+      	
+      </div>
 	  </div>
 	  </div>
 	  <div class = "col-md-3" style = "display:none">

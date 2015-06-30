@@ -61,8 +61,7 @@
     <div class = "textSection">
       <h3><a href = "{{post.url}}">{{post.title}}</a></h3>
       <span class="label label-danger" ng-repeat = "tag in post.tags">{{tag}}</span>
-      <div class = "short">
-        {{post.description}}
+      <div class = "short" ng-include="post.descriptionUrl">
       </div><a ng-href = "{{post.url}}">Read More</a>
     </div>
 

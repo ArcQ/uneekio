@@ -42,7 +42,9 @@
       </form>
 
       <h3 ng-show="post.comments.length == 0" id = "noCommentsMsg">No comments for this post yet. Be the first to comment!</h3>
-      <collection collection='post.comments' on-submit = 'saveReply(comment)' on-reply = 'toggleCommentForm(comment)'></collection>
+      <div class = "posted">
+      	<collection collection='post.comments' on-submit = 'saveReply(comment)' on-reply = 'toggleCommentForm(comment)'></collection>
+    	</div>
       	
       </div>
 	  </div>

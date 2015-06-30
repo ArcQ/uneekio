@@ -144,7 +144,7 @@ app.controller('BlogPostCtrl', function ($scope,$timeout,$location,$http,appConf
         scope: {
             collection: '=', onSubmit: '&', onReply: '&'
         },
-        template: "<div><comment class = 'comment' ng-repeat='comment in collection' comment='comment' on-submit = 'onSubmit({comment:sub_comment})' on-reply = 'onReply({comment:sub_comment})' ></comment></div>"
+        template: "<div ><comment class = 'comment' ng-repeat='comment in collection' comment='comment' on-submit = 'onSubmit({comment:sub_comment})' on-reply = 'onReply({comment:sub_comment})' ></comment></div>"
     }
     x
 }).directive('comment', function ($compile) {
@@ -154,7 +154,7 @@ app.controller('BlogPostCtrl', function ($scope,$timeout,$location,$http,appConf
         scope: {
             comment: '=', onSubmit: '&', onReply: '&'
         },
-        template: '<div><p style = "float:right">{{ comment.created | date : "dd  MMMM yyyy"}}</p><p>{{comment.author}}</p><p>{{comment.content}}</p><a class = "replyButton" ng-click = "onReply({sub_comment:comment})">Reply</a><form ng-show = "comment.isReplyShown" ng-submit="onSubmit({sub_comment:comment})"><h3>Reply to {{comment.author}}</h3><input class = "nameInput" type = "text" placeholder="Name" ng-model = "comment.newReply.author"><textarea id = "commentContent" rows="4" type = "textarea" placeholder="Your Thoughts" ng-model = "comment.newReply.content"></textarea><input class = "btn" type="submit" id="submit" value="Post Reply"></form></div>',
+        template: '<div><div class = "commentContent"><p style = "float:right">{{ comment.created | date : "dd  MMMM yyyy"}}</p><p>{{comment.author}}</p><p>{{comment.content}}</p><a class = "replyButton" ng-click = "onReply({sub_comment:comment})">Reply</a></div><form ng-show = "comment.isReplyShown" ng-submit="onSubmit({sub_comment:comment})"><h3>Reply to {{comment.author}}</h3><input class = "nameInput" type = "text" placeholder="Name" ng-model = "comment.newReply.author"><textarea id = "commentContent" rows="4" type = "textarea" placeholder="Your Thoughts" ng-model = "comment.newReply.content"></textarea><input class = "btn" type="submit" id="submit" value="Post Reply"></form></div>',
         link: function (scope, element, attrs) {
             if (scope.comment.replies.length>0) {
                 var replies = angular.element("<collection collection='comment.replies' on-submit = 'onSubmit({sub_comment:comment})' on-reply = 'onReply({sub_comment:comment})'></collection>");

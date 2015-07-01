@@ -1,4 +1,8 @@
-app.config(['$routeProvider', '$locationProvider', '$httpProvider', function($routeProvider, $locationProvider, $httpProvider, $location, appConfig) {
+app.config(['$routeProvider', '$locationProvider', '$httpProvider','$provide', function($routeProvider, $locationProvider, $httpProvider, $provide, $location, appConfig) {
+$provide.decorator('$sniffer', function($delegate) {
+  $delegate.history = false;
+  return $delegate;
+});
 $routeProvider
   .when('/', {
     templateUrl: 'views/main.html',
@@ -29,5 +33,5 @@ $routeProvider
   .otherwise({
     redirectTo: '/'
   });
-  $locationProvider.html5Mode(true);
+  $locationProvider.html5Mode(true).hashPrefix("!");
 }]);

@@ -10,11 +10,9 @@
 app.controller('AppCtrl', function ($scope,$timeout,$http,appConfig,loadStatus) {
   $scope.loadStatus = loadStatus;
   
-  
-
   $scope.defaultPath = appConfig.data.default_path;
   $scope.subDirectory = appConfig.data.sub_directory;
-    $scope.apiPath = appConfig.data.default_api;
+  $scope.apiPath = appConfig.data.default_api;
 
   $scope.saveEmail = function(){
       if($scope.subEmail.length>2){

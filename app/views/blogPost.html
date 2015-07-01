@@ -30,23 +30,11 @@
 
 	  <div ng-include = "post.contentUrl" class = "blogContent">
 	  </div>
+
 	  <div class = "comments">
+			<div disqus="post.title"></div>
+		</div>
 
-	  	<form ng-submit="saveNewComment()">
-	  		<h3>What do you think of this article?</h3>
-	  		<input class = "nameInput" type = "text" placeholder="Name" ng-model = "newComment.author">
-        
-        <textarea rows="4" type = "textarea" placeholder="Your Thoughts" ng-model = "newComment.content"></textarea>
-        
-        <input class = "btn submitButton" type="submit" id="submit" value="Post Comment" >
-      </form>
-
-      <h3 ng-show="post.comments.length == 0" id = "noCommentsMsg">No comments for this post yet. Be the first to comment!</h3>
-      <div class = "posted">
-      	<collection collection='post.comments' on-submit = 'saveReply(comment)' on-reply = 'toggleCommentForm(comment)'></collection>
-    	</div>
-      	
-      </div>
 	  </div>
 	  </div>
 	  <div class = "col-md-3" style = "display:none">

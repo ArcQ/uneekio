@@ -1,0 +1,63 @@
+.content{
+  margin-top:80px;
+  overflow: auto;
+}
+
+.contentContainer{
+  padding-top:1px;
+  margin-top:-1px;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #777;
+}
+.contentTopBorder{
+  width:100%;
+  border-bottom:none;
+}
+
+#contactPage{
+	background-color:#A7383E;
+	width:100%;
+	padding-left:0;
+  padding-right: 0;
+}
+
+.title{
+	margin:auto;
+}
+
+.title h1{
+	color:#FFCCCC;
+	font-size: 100px;
+	padding:50px;
+}
+
+#email h1{
+	color:white;
+	padding:20px;
+	background:#555;
+	margin-top:20px;
+	margin-bottom: 0;
+	display:block;
+}
+
+#email{
+	padding-right:0;
+	padding-left:0;
+}
+
+form input{
+	margin-bottom:10px;
+}
+
+form .btn-primary{
+	margin-top:20px;
+	background:#555;
+	border:none;
+	font-size: 20px;
+}
+
+.footer{
+	margin-top:0;
+}

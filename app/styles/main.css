@@ -216,9 +216,7 @@
 .banner #prevArrow:hover{
 
   background-image:url('../images/carousel/activePrev.png');
-  background-size:70px 70px;
-  width:70px;
-  height:70px;
+  
   left:0;
 
 }
@@ -226,9 +224,7 @@
 .banner #nextArrow:hover{
 
   background-image:url('../images/carousel/activeNext.png');
-  background-size:70px 70px;
-  width:70px;
-  height:70px;
+
 
 }
 
@@ -248,6 +244,45 @@
   color:white; 
   font-size:4vw;
 }
+
+@media only screen and (max-width: 768px){
+  .banner .slide .textOuter .textInner h1 a{ 
+    font-size:7vw;
+  }
+  .banner .slide .textOuter{
+    width:100%;
+    margin-left:10%;
+  }
+
+  .banner .slide .textOuter .textInner{
+    width:80%; 
+    text-align:center;
+  }
+  .banner #nextArrow{
+    top:60%;
+    right:0;
+    position: absolute;
+    display:block;
+    background-image:url('../images/carousel/next.png');
+    background-size:50px 50px;
+    width:50px;
+    height:50px;
+  }
+
+  .banner #prevArrow{
+  top:60%;
+  position:absolute;
+  display:block;
+  background-image:url('../images/carousel/prev.png');
+  background-size:50px 50px;
+  width:50px;
+  height:50px;
+  left:0;
+
+}
+}
+
+
 
 .banner .slide .textOuter .textInner h1 a:hover{
   text-decoration:none;
@@ -321,13 +356,18 @@
 
 /*BLOGNAV END*/
 
-.listedPost img{
+.listedPost .postImage{
+  height:200px;
   width:30%; 
   margin:0 15px; 
   display:inline-block;
   vertical-align:top;
+  background-size:300px 200px;
+  background-position:50% 0;
 }
-
+.listedPost .imageTitle{
+    display:none;
+  }
 .listedPost .textSection{
   width:60%; 
   display:inline-block;
@@ -352,6 +392,37 @@
 .listedPost .textSection h3 a:hover{
   color: #A7383E;
   cursor: pointer;
+}
+
+@media only screen and (max-width: 500px){
+  
+  .listedPost .postImage{
+    width:100%;
+    margin-left:auto;
+    margin-right:auto;
+    text-align: center;
+    text-decoration:none;
+    position:relative;
+    color:white;
+  }
+  .listedPost .postImage:hover{
+    color:#A7383E;
+
+  }
+  .listedPost .textSection{
+    display:none;
+  }
+  .listedPost .imageTitle{
+    width:100%;
+    padding:3% 1%;
+    display:block;
+    text-decoration:none;
+    position:absolute;
+    bottom:0;
+    font-size:5.3vw;
+    background-color:rgba(0,0,0,0.5);
+  }
+
 }
 
 /*FOOTER*/
@@ -401,11 +472,19 @@
 
 #emailTextInput{
   padding:7px 5px 9px 5px; 
-  width:70%;
+  width:60%;
 }
 
 #emailSubmit{
   width:30%;
+}
+
+.iconAttribution{
+  font-size:11px;
+}
+
+.iconAttribution a{
+  margin:0;
 }
 
 /*END FOOTER*/

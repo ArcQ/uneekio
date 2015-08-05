@@ -30,6 +30,9 @@ $routeProvider
   .when('/termsAndConditions', {
     templateUrl: 'views/essential/termsConditions.html'
   })
+  .when('/aboutUneek', {
+    templateUrl: 'views/essential/about.html'
+  })
   .otherwise({
     redirectTo: '/'
   });

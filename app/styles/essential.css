@@ -6,3 +6,75 @@
   width:100%;
   border-bottom:1px solid #A7383E;
 }
+
+.navbar-default .navbar-nav > li > a {
+    color: #777;
+}
+
+/*top banner*/
+.topBanner{
+	width:100%;
+	height:500px;
+	background:black;
+	position:absolute;
+}
+
+.topBanner h2{
+	border-top:1px solid #333;
+	display:inline;
+	padding:5px 20px;
+	margin-top:10px;
+}
+
+.topBanner img{
+	width:500px;
+	display:block;
+}
+
+.centerInnerY{
+	top:-100px;
+}
+
+@media screen and (max-width: 510px){
+  .topBanner img{
+	width:400px;
+	} 
+}
+
+
+/*top banner end*/
+
+/*Top Description*/
+.topDescription{
+	margin-top:520px;
+	font-style: italic;
+	padding:0 10%;
+	padding-bottom:20px;
+	line-height:30px;
+}
+/*Top Description Ends*/
+
+/*codeJournal about*/
+
+#codeJournalAbout {
+	padding: 0px 10%;
+}
+
+#codeJournalAbout .leftBanner img {
+	width:100%;
+	padding:30px 10px;
+	display:block;
+}
+
+#codeJournalAbout .text{
+	padding-top:30px;
+}
+
+#codeJournalAbout .topDescription{
+	font-style: italic;
+	padding-bottom:20px;
+	line-height:30px;
+	margin-top:0;
+}
+/*codeJournal End*/
+

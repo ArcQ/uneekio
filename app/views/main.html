@@ -57,9 +57,11 @@
 
 <div class = "col-md-9">
   <div class = "listedPost" ng-repeat = "post in posts | filter:{tags:tagFilter} ">
-    <img ng-src= "{{post.image}}" style = "">
+    <a href = "{{post.url}}" class = "postImage" ng-style = "{'background-image' : 'url({{post.image}})'}">
+      <h3 class = "imageTitle">{{post.title}}</h3>
+    </a>
     <div class = "textSection">
-      <h3><a href = "{{post.url}}">{{post.title}}</a></h3>
+      <h3 ><a  href = "{{post.url}}">{{post.title}}</a></h3>
       <span class="label label-danger" ng-repeat = "tag in post.tags">{{tag}}</span>
       <div class = "short" ng-include="post.descriptionUrl">
       </div><a ng-href = "{{post.url}}">Read More</a>

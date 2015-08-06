@@ -5,3 +5,4 @@ dist
 bower_components
 app/scripts/services/appConfig.js
 app/setup.js
+app/blogPosts

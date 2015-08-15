@@ -13,6 +13,7 @@ $routeProvider
     controller: 'BlogPostCtrl'
   })
   .when('/codeJournal', {
+    //codeJournal is a seperate angular app because of future plans to seperate the two products
     controller : function(appConfig){
         window.location.href = appConfig.data.default_path +'codeJournal/';
     }, 

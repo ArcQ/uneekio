@@ -9,11 +9,11 @@
  */
 app.controller('AppCtrl', function ($scope,$timeout,$http,appConfig,loadStatus) {
   $scope.loadStatus = loadStatus;
-  
   $scope.defaultPath = appConfig.data.default_path;
   $scope.subDirectory = appConfig.data.sub_directory;
   $scope.apiPath = appConfig.data.default_api;
 
+  //Subscribe Email Functionality
   $scope.saveEmail = function(){
       if($scope.subEmail.length>2){
 
@@ -32,6 +32,7 @@ app.controller('AppCtrl', function ($scope,$timeout,$http,appConfig,loadStatus) 
             }, 1000);
             setTimeout(function () {
                 $scope.$apply(function() {
+                  //loading div that pops up
                   $scope.loadStatus.isShow = false;
                 })
             }, 4000);
@@ -51,6 +52,7 @@ app.controller('AppCtrl', function ($scope,$timeout,$http,appConfig,loadStatus) 
     }
 
 }).run(function($rootScope, $location, $routeParams, $window){
+    //Google Analytics for Angular
     $rootScope.$on('$routeChangeSuccess', function() {
         var output=$location.path()+"?";
         angular.forEach($routeParams,function(value,key){
